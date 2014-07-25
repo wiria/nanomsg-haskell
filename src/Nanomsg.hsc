@@ -307,7 +307,7 @@ throwErrnoIfRetryMayBlock p loc f on_block = do
     if p res
         then do
             err <- c_nn_errno
-            if err `elem` [ (#const EAGAIN), (#const EINTR), (#const EWOULDBLOCK) ]
+            if err `elem` [ (#const EAGAIN), (#const EINTR), 140 ]
                 then do
                     void on_block
                     throwErrnoIfRetryMayBlock p loc f on_block
