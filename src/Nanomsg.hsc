@@ -75,6 +75,7 @@ module Nanomsg
         , setTcpNoDelay
     ) where
 
+#include "nanomsg/errno.h"
 #include "nanomsg/nn.h"
 #include "nanomsg/pair.h"
 #include "nanomsg/reqrep.h"
